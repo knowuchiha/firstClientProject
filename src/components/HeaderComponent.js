@@ -1,9 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { HomeData } from "../shared/HomeData";
 
 function Header() {
-    
+    const handleClick = () => {
+        window.scroll(0, 0);
+    };
+
+    function Dropdown() {
+        return HomeData.images.map((item) => {
+            return <a href="/">{item.title}</a>;
+        });
+    }
 
     return (
         <div>
@@ -22,31 +30,30 @@ function Header() {
                     </button>
                     <div className="collapse navbar-collapse" id="myNav">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <NavLink activeClassName="selected" to="/home">
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink activeClassName="selected" to="about">
-                                    About
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
+                            <li className="nav-item grow">
                                 <NavLink
                                     activeClassName="selected"
-                                    to="/events"
+                                    to="/home"
+                                    onClick={handleClick}
                                 >
-                                    Events
+                                    KSS Engineering
                                 </NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink
+
+                            <li className="nav-item dropbtn">
+                                <a
+                                    href="#services"
                                     activeClassName="selected"
-                                    to="/contact"
+                                    className="dropdown"
                                 >
-                                    Contact
-                                </NavLink>
+                                    services
+                                    <div className="dropdown-content">
+                                        <Dropdown />
+                                    </div>
+                                </a>
+                            </li>
+                            <li className="nav-item grow">
+                                <a href="#corporateLeaders">about</a>
                             </li>
                         </ul>
                     </div>
