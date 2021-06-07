@@ -1,19 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import $ from "jquery";
+
 
 function Header() {
-    useEffect(() => {
-        $(".navbar-collapse a").click(function () {
-            window.scroll(0, 0);
-            $(".navbar-collapse").collapse("hide");
-            // $("html,body").animate({ scrollTop: 0 }, 0);
-        });
-        // $("a[href='#top']").click(function () {
-        //     $("html, body").animate({ scrollTop: 0 }, "slow");
-        //     return false;
-        // });
-    });
+    
 
     return (
         <div>

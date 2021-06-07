@@ -1,77 +1,114 @@
-import React, { useState } from "react";
-import {
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption,
-} from "reactstrap";
+import React, { useEffect } from "react";
 
-import { HomeDetails } from "../shared/HomeDetails";
+import { HomeData } from "../shared/HomeData";
 
-const items = HomeDetails.carousal;
+const items = HomeData.images;
 
 const MyCarousel = (props) => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [animating, setAnimating] = useState(false);
-
-    const next = () => {
-        if (animating) return;
-        const nextIndex =
-            activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-    };
-
-    const previous = () => {
-        if (animating) return;
-        const nextIndex =
-            activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    };
-
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    };
-
-    const slides = items.map((item) => {
+    useEffect(() => {
+        const next = document.getElementById("next-btn");
+        setInterval(function () {
+            next.click();
+        }, 5000);
+    }, []);
+    function Slides() {
         return (
-            <CarouselItem
-                onExiting={() => setAnimating(true)}
-                onExited={() => setAnimating(false)}
-                key={item.src}
-            >
-                <img src={item.img1} alt={item.alt} />
-                <img src={item.img2} alt={item.alt} />
-                <CarouselCaption
-                    captionText={item.description}
-                    captionHeader={item.title}
-                />
-            </CarouselItem>
+            <>
+                {items.map((item, index) => {
+                    if (index === 0) {
+                        return (
+                            <div key={index} class="carousel-item active ">
+                                <img src={item.img} alt={item.title} />
+                            </div>
+                        );
+                    } else {
+                        return (
+                            <div key={index} class="carousel-item">
+                                <img src={item.img} alt={item.title} />
+                            </div>
+                        );
+                    }
+                })}
+            </>
         );
-    });
-
+    }
     return (
-        <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-            <CarouselIndicators
-                items={items}
-                activeIndex={activeIndex}
-                onClickHandler={goToIndex}
-            />
-            {slides}
-            <CarouselControl
-                className='carouselControl'
-                direction="prev"
-                directionText="Previous"
-                onClickHandler={previous}
-            />
-            <CarouselControl
-                className='carouselControl'
-                direction="next"
-                directionText="Next"
-                onClickHandler={next}
-            />
-        </Carousel>
+        <div
+            id="carouselExampleIndicators"
+            class="carousel slide "
+            data-bs-ride="false"
+            data-bs-interval="false"
+            data-bs-pause="false"
+        >
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="4"
+                    aria-label="Slide 5"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="5"
+                    aria-label="Slide 6"
+                ></button>
+            </div>
+            <div class="carousel-inner">
+                <Slides />
+            </div>
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                id="next-btn"
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     );
 };
 

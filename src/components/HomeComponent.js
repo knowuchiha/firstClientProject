@@ -1,27 +1,32 @@
 import React from "react";
-import { Zoom } from "react-reveal";
 import MyCarousel from "./MyCarousel";
+import { HomeData } from "../shared/HomeData";
 
 function Home() {
+    const Models = () => {
+        return HomeData.images.map((item) => {
+            return (
+                <div className="model">
+                    <div className="img-thumbnail">
+                        <img src={item.img} alt={item.title} />
+                        <div className="model-title">{item.title}</div>
+                    </div>
+                </div>
+            );
+        });
+    };
     return (
-        <div>
-            <div className="mainHome">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12 hometitle">
-                            <Zoom>
-                                <div className="title">
-                                    'Vesuvio <small>roman cuisine</small>
-                                </div>
-                            </Zoom>
-                        </div>
-                        <div className="col-12 carouselGrid">
-                            <MyCarousel />
-                        </div>
+        <>
+            <MyCarousel />
+            <div className="container">
+                <div className="row">
+                    <div className="dealing-title">Our Services</div>
+                    <div className="Model-grid">
+                        <Models />
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
