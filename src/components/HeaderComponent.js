@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HomeData } from "../shared/HomeData";
 
 function Header() {
+    const [dropdown, setDropdown] = useState(false);
+
     const handleClick = () => {
         window.scroll(0, 0);
     };
 
     function Dropdown() {
         return HomeData.images.map((item) => {
-            return <a href="/">{item.title}</a>;
+            return (
+                <a key={item.title} href="/">
+                    {item.title}
+                </a>
+            );
         });
+    }
+
+    function dropdownClick() {
+        setDropdown((prev) => !prev);
     }
 
     return (
         <div>
-            <nav className="navbar fixed-top navbar-expand-md navbar-dark">
-                <div className="container">
+            <nav className="navbar fixed-top navbar-expand navbar-dark">
+                <div className="">
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -41,16 +51,19 @@ function Header() {
                             </li>
 
                             <li className="nav-item dropbtn">
-                                <a
-                                    href="#services"
-                                    activeClassName="selected"
-                                    className="dropdown"
+                                <div
+                                    className={
+                                        dropdown
+                                            ? "smalldrop dropdown"
+                                            : "dropdown"
+                                    }
+                                    onClick={dropdownClick}
                                 >
                                     services
                                     <div className="dropdown-content">
                                         <Dropdown />
                                     </div>
-                                </a>
+                                </div>
                             </li>
                             <li className="nav-item grow">
                                 <a href="#corporateLeaders">about</a>

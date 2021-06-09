@@ -17,13 +17,13 @@ const MyCarousel = (props) => {
                 {items.map((item, index) => {
                     if (index === 0) {
                         return (
-                            <div key={index} class="carousel-item active ">
+                            <div key={index} className="carousel-item active ">
                                 <img src={item.img} alt={item.title} />
                             </div>
                         );
                     } else {
                         return (
-                            <div key={index} class="carousel-item">
+                            <div key={index} className="carousel-item">
                                 <img src={item.img} alt={item.title} />
                             </div>
                         );
@@ -35,17 +35,17 @@ const MyCarousel = (props) => {
     return (
         <div
             id="carouselExampleIndicators"
-            class="carousel slide "
+            className="carousel slide "
             data-bs-ride="false"
             data-bs-interval="false"
             data-bs-pause="false"
         >
-            <div class="carousel-indicators">
+            <div className="carousel-indicators">
                 <button
                     type="button"
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide-to="0"
-                    class="active"
+                    className="active"
                     aria-current="true"
                     aria-label="Slide 1"
                 ></button>
@@ -80,33 +80,33 @@ const MyCarousel = (props) => {
                     aria-label="Slide 6"
                 ></button>
             </div>
-            <div class="carousel-inner">
+            <div className="carousel-inner">
                 <Slides />
             </div>
             <button
-                class="carousel-control-prev"
+                className="carousel-control-prev"
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev"
             >
                 <span
-                    class="carousel-control-prev-icon"
+                    className="carousel-control-prev-icon"
                     aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Previous</span>
+                <span className="visually-hidden">Previous</span>
             </button>
             <button
                 id="next-btn"
-                class="carousel-control-next"
+                className="carousel-control-next"
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next"
             >
                 <span
-                    class="carousel-control-next-icon"
+                    className="carousel-control-next-icon"
                     aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Next</span>
+                <span className="visually-hidden">Next</span>
             </button>
         </div>
     );

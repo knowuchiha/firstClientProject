@@ -20,8 +20,10 @@ function CorporateLeaders() {
                                 />
                             </div>
                             <div className="leader-info">
-                                <h1>Jack Johnson</h1>
-                                <h4>Founder,Company CEO</h4>
+                                <div className="name">Jack Johnson</div>
+                                <div className="designation">
+                                    Founder,Company CEO
+                                </div>
                                 <p>About CEO ...</p>
                             </div>
                         </div>
@@ -37,8 +39,8 @@ function CorporateLeaders() {
                                 />
                             </div>
                             <div className="leader-info">
-                                <h1>Peter Pan</h1>
-                                <h4>Co-Founder</h4>
+                                <div className="name">Peter Pan</div>
+                                <div className="designation">Co-Founder</div>
                                 <p>About...</p>
                             </div>
                         </div>

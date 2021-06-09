@@ -8,8 +8,8 @@ function Footer() {
             <ul>
                 {HomeData.images.map((item) => {
                     return (
-                        <li>
-                            <Link>{item.title}</Link>
+                        <li key={item.title}>
+                            <Link to="/">{item.title}</Link>
                         </li>
                     );
                 })}
@@ -21,12 +21,14 @@ function Footer() {
             <footer>
                 <div className="container">
                     <div className="row">
-                        <div className="col-4 offset-2 footer-services">
-                            <h2>SERVICES</h2>
+                        <div className="col-md-4 offset-md-2 col-6 footer-services">
+                            <div className="service-footer">SERVICES</div>
                             <Services />
                         </div>
-                        <div className="col-4">
-                            <h2>CONNECT WITH US</h2>
+                        <div className="col-md-4  col-6">
+                            <div className="connect-footer">
+                                CONNECT WITH US
+                            </div>
                             <div className="social-fonts">
                                 <a
                                     href="https://www.instagram.com/"
@@ -74,20 +76,20 @@ function Footer() {
                             <div className="footer-services">
                                 <ul>
                                     <li>
-                                        <Link>Contact Us</Link>
+                                        <Link to="/">Contact Us</Link>
                                     </li>
                                     <li>
-                                        <Link>Privacy Notice</Link>
+                                        <Link to="/">Privacy Notice</Link>
                                     </li>
                                     <li>
-                                        <Link>Disclaimer</Link>
+                                        <Link to="/">Disclaimer</Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-4 offset-2 copyright">
+                        <div className="col-12 offset-md-2 offset-1 copyright">
                             Copyright <span>&#169;</span> KSS Engineering.All
                             Rights Reserved
                         </div>

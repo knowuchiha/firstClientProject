@@ -8,7 +8,7 @@ function Home() {
     const Models = () => {
         return HomeData.images.map((item) => {
             return (
-                <div className="model">
+                <div key={item.title} className="model">
                     <div className="img-thumbnail">
                         <Link to={`/${item.title}`}>
                             <img src={item.img} alt={item.title} />
