@@ -12,7 +12,7 @@ function Header() {
     function Dropdown() {
         return HomeData.images.map((item) => {
             return (
-                <a key={item.title} href="/">
+                <a key={item.title} href={`${item.link}`}>
                     {item.title}
                 </a>
             );

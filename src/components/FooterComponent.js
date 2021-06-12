@@ -21,12 +21,12 @@ function Footer() {
             <footer>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4 offset-md-2 col-6 footer-services">
+                        <div className="footer-services">
                             <div className="service-footer">SERVICES</div>
                             <Services />
                         </div>
-                        <div className="col-md-4  col-6">
-                            <div className="connect-footer">
+                        <div className="connect-footer">
+                            <div className="connect-footer-title">
                                 CONNECT WITH US
                             </div>
                             <div className="social-fonts">
@@ -76,7 +76,13 @@ function Footer() {
                             <div className="footer-services">
                                 <ul>
                                     <li>
-                                        <Link to="/">Contact Us</Link>
+                                        <a
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            href="mailto:kssengineering@gmail.com"
+                                        >
+                                            Contact Us
+                                        </a>
                                     </li>
                                     <li>
                                         <Link to="/">Privacy Notice</Link>
@@ -89,7 +95,7 @@ function Footer() {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-12 offset-md-2 offset-1 copyright">
+                        <div className="col-12 copyright">
                             Copyright <span>&#169;</span> KSS Engineering.All
                             Rights Reserved
                         </div>
