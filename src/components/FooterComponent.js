@@ -9,7 +9,9 @@ function Footer() {
                 {HomeData.images.map((item) => {
                     return (
                         <li key={item.title}>
-                            <Link to="/">{item.title}</Link>
+                            <Link to={`${item.link}`} target="_blank">
+                                {item.title}
+                            </Link>
                         </li>
                     );
                 })}
