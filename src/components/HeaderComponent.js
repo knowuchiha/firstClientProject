@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { HomeData } from "../shared/HomeData";
 
 function Header() {
@@ -12,9 +12,9 @@ function Header() {
     function Dropdown() {
         return HomeData.images.map((item) => {
             return (
-                <a key={item.title} href={`${item.link}`}>
+                <Link key={item.title} to={`${item.link}`} target="_blank">
                     {item.title}
-                </a>
+                </Link>
             );
         });
     }
@@ -42,7 +42,7 @@ function Header() {
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item grow">
                                 <NavLink
-                                    activeClassName="selected"
+                                    className="selected"
                                     to="/home"
                                     onClick={handleClick}
                                 >

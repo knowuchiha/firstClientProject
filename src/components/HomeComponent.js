@@ -9,8 +9,8 @@ function Home() {
         return HomeData.images.map((item) => {
             return (
                 <div key={item.title} className="model">
-                    <div className="img-thumbnail shadow">
-                        <Link to={`${item.link}`}>
+                    <div className="img-thumbnail shadow-lg">
+                        <Link to={`${item.link}`} target="_blank">
                             <img src={item.img} alt={item.title} />
                             <div className="model-title">{item.title}</div>
                         </Link>
