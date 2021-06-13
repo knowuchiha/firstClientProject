@@ -2,6 +2,7 @@ import React from "react";
 import { HomeData } from "../shared/HomeData";
 import ServiceCard from "./ServiceCard";
 import TeamCard from "./TeamCard";
+import Zoom from "react-reveal/Zoom";
 
 const Data = HomeData.images[0];
 export default function ArchitectureComponent() {
@@ -13,7 +14,11 @@ export default function ArchitectureComponent() {
                         <img src={`${Data.img}`} alt="..." />
                     </div>
                     <div className="main-title">
-                        <div className="centered">{Data.title}</div>
+                        <div className="centered">
+                            <Zoom left duration={1200}>
+                                {Data.title}
+                            </Zoom>
+                        </div>
                     </div>
                 </div>
                 <div className="container">

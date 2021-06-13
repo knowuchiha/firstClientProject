@@ -319,8 +319,9 @@
         padding-top: 4px;
         width: 40px;
         height: 40px;
-        border-radius: 5%;
-        background-color: rgba(117, 117, 117, 0.76);
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0.829);
+        background-color: rgba(0, 0, 0, 0.2);
     }
     .leader-cards .card-body a:hover {
         transform: scale(1.2);
@@ -576,8 +577,9 @@
         padding-top: 4px;
         width: 40px;
         height: 40px;
-        border-radius: 5%;
-        background-color: rgba(117, 117, 117, 0.726);
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0.829);
+        background-color: rgba(0, 0, 0, 0.2);
     }
 
     .links {
@@ -713,7 +715,7 @@
         font-size: 5em;
         font-weight: 800;
         color: white;
-        text-shadow: 2px 2px 5px rgb(0, 0, 0);
+        text-shadow: 2px 2px 10px rgb(0, 0, 0);
         text-align: center;
     }
 
@@ -907,10 +909,11 @@
         margin-right: 5%;
         font-size: 1.4em;
         padding-top: 3px;
-        width: 40px;
-        height: 40px;
-        border-radius: 5%;
-        background-color: rgba(117, 117, 117, 0.76);
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0.829);
+        background-color: rgba(0, 0, 0, 0.2);
     }
     .leader-cards .card-body a:hover {
         transform: scale(1.2);
@@ -1077,6 +1080,7 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .serve-cards .card {
         margin-left: 1vw;
         margin-right: 1vw;
@@ -1095,10 +1099,7 @@
     .serve-cards .card .card-text {
         margin-top: 15%;
     }
-    .serve-cards .card:hover {
-        transform: translate(0, -5px);
-        transition-duration: 0.5s;
-    }
+
     .core-team {
         margin-top: 10vh;
         font-size: 2.6em;
@@ -1158,10 +1159,11 @@
         margin-right: 5%;
         font-size: 1.4em;
         padding-top: 3px;
-        width: 40px;
-        height: 40px;
-        border-radius: 5%;
-        background-color: rgba(117, 117, 117, 0.747);
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0.829);
+        background-color: rgba(0, 0, 0, 0.2);
     }
     .core-team-cards .card-body a:hover {
         transform: scale(1.2);
