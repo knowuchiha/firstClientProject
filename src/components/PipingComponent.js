@@ -38,9 +38,21 @@ export default function PipingComponent() {
                     </div>
                     <div className="row">
                         <div className="core-team-cards">
-                            <TeamCard name="James Potter" title="Designation" />
-                            <TeamCard name="Laura Doe" title="Designation" />
-                            <TeamCard name="Carl John" title="Designation" />
+                            <TeamCard
+                                name="James Potter"
+                                title="Designation"
+                                id="james"
+                            />
+                            <TeamCard
+                                name="Laura Doe"
+                                title="Designation"
+                                id="laura"
+                            />
+                            <TeamCard
+                                name="Carl John"
+                                title="Designation"
+                                id="carl"
+                            />
                         </div>
                     </div>
                 </div>

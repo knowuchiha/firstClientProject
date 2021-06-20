@@ -47,20 +47,6 @@ function Footer() {
                                     <i className="fa fa-facebook"></i>
                                 </a>
                                 <a
-                                    href="https://www.youtube.com/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <i className="fa fa-youtube-play"></i>
-                                </a>
-                                <a
-                                    href="https://www.twitter.com/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <i className="fa fa-twitter"></i>
-                                </a>
-                                <a
                                     href="https://www.linkedin.com/"
                                     target="_blank"
                                     rel="noreferrer"

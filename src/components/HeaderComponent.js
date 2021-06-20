@@ -59,14 +59,14 @@ function Header() {
                                     }
                                     onClick={dropdownClick}
                                 >
-                                    services
+                                    Services
                                     <div className="dropdown-content">
                                         <Dropdown />
                                     </div>
                                 </div>
                             </li>
                             <li className="nav-item grow">
-                                <a href="#corporateLeaders">about</a>
+                                <a href="#corporateLeaders">About</a>
                             </li>
                         </ul>
                     </div>

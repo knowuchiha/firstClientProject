@@ -1,50 +1,7 @@
 import React from "react";
+import TeamCard from "./TeamCard";
 
 function CorporateLeaders() {
-    const LeaderCard = (props) => {
-        return (
-            <div className="card border-light shadow">
-                <img
-                    src="./assets/images/leader.jpg"
-                    className="card-img-top"
-                    alt="CEO"
-                />
-                <div className="card-body">
-                    <h3 className="card-title">{props.name}</h3>
-                    <h5 className="card-subtitle mb-2 text-muted">
-                        {props.title}
-                    </h5>
-                    <p className="card-text">About ...</p>
-                    <div className="links">
-                        <a
-                            className="card-link"
-                            href="https://www.instagram.com/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <i className="fa fa-instagram"></i>
-                        </a>
-                        <a
-                            className="card-link"
-                            href="https://www.facebook.com/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <i className="fa fa-facebook"></i>
-                        </a>
-                        <a
-                            className="card-link"
-                            href="https://www.linkedin.com/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <i className="fa fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        );
-    };
     return (
         <>
             <div className="corporate-component">
@@ -54,13 +11,22 @@ function CorporateLeaders() {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="leader-cards">
-                        <LeaderCard
+                    <div className="core-team-cards">
+                        <TeamCard
                             name="jack johnson"
                             title="Founder, Company CEO"
+                            id="jack"
                         />
-                        <LeaderCard name="peter pan" title="Co-Founder" />
-                        <LeaderCard name="Dylan Hall" title="Co-Founder" />
+                        <TeamCard
+                            name="peter pan"
+                            title="co-founder"
+                            id="laura"
+                        />
+                        <TeamCard
+                            name="dylan hall"
+                            title="co-founder"
+                            id="carl"
+                        />
                     </div>
                 </div>
             </div>
