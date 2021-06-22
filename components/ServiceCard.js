@@ -6,7 +6,7 @@ export default function ServiceCard(props) {
     const ProjectClass = props.img ? "project-class" : null;
     return (
         <>
-            <Fade left delay={200} duration={1500}>
+            <Fade left delay={0} duration={1200}>
                 <div
                     className={"card border-light shadow " + ProjectClass}
                     onClick={
