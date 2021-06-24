@@ -2,7 +2,7 @@
     --navbar-color: whitesmoke;
     --dropdown-color: #f0f4effa;
     /* large screen */
-    --nav-link-color: #56524e;
+    --nav-link-color: #33312f;
     --nav-selected: #201f1d;
     --nav-link-size: 1.5em;
     --nav-link-weight: 600;
@@ -851,9 +851,6 @@
         width: 100vw;
         margin-top: 0px;
     }
-    .navbar-dark {
-        background-color: var(--navbar-color);
-    }
 
     .navbar-collapse {
         border-radius: 5px;
@@ -866,12 +863,13 @@
     .nav-item .selected {
         color: var(--nav-selected);
         font-weight: var(--nav-link-weight);
-        text-shadow: 1px 1px 10px rgb(190, 190, 190);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7),
+            -2px -2px 5px rgba(0, 0, 0, 0.7);
     }
 
     .grow a {
         text-decoration: none;
-        color: var(--nav-link-color);
+
         font-size: 25px;
         font-weight: 400;
         text-align: left;
@@ -880,10 +878,10 @@
         transform: scale(1.2);
         transition-duration: 0.6s;
     }
-    .dropbtn div {
+    .dropbtn .dropName {
         cursor: pointer;
         text-decoration: none;
-        color: var(--nav-link-color);
+
         font-size: 25px;
         font-weight: 300;
         text-align: left;
@@ -893,6 +891,7 @@
         display: inline-block;
     }
     .dropdown-content {
+        font-size: 1.3em;
         padding-top: 5vh;
         display: none;
         position: absolute;
@@ -938,7 +937,12 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+        );
     }
 
     .welcome-title .title {
@@ -1257,10 +1261,10 @@
     *
     */
     .service-component {
-        margin-top: 10vh;
+        margin-top: 0vh;
     }
     .service-main {
-        height: 90vh;
+        height: 100vh;
         width: 100%;
     }
     .service-main .main-img {
@@ -1280,7 +1284,12 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgb(0, 0, 0, 0.2);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+        );
         display: flex;
         flex: content;
         flex-direction: row;

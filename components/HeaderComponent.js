@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { HomeData } from "../shared/HomeData";
 
 function Header() {
     const [dropdown, setDropdown] = useState(false);
+    const [navLinkColor, setNavlinkcolor] = useState("white");
+    const [navbarColor, setNavbarColor] = useState("rgba(0, 0, 0, 0)");
+    const [textShadow, setTextshadow] =
+        useState(`2px 2px 5px rgba(0, 0, 0, 0.7),
+                        -2px -2px 4px rgba(0, 0, 0, 0.7)`);
+    const [boxShadow, setBoxShadow] = useState("none");
+    const [height, setHeight] = useState(0);
+    const [Yposition, setYposition] = useState(0);
 
     function Dropdown() {
-        return HomeData.images.map((item) => {
+        return HomeData.images.map((item, index) => {
             return (
-                <Link key={item.title} href={`${item.link}`}>
+                <Link key={index} href={`${item.link}`}>
                     {item.title}
                 </Link>
             );
@@ -19,9 +27,35 @@ function Header() {
         setDropdown((prev) => !prev);
     }
 
+    const handleScroll = () => {
+        setHeight(window.innerHeight);
+        setYposition(scrollY);
+
+        if (Yposition > 20) {
+            setBoxShadow("0px 4px 20px rgba(0, 0, 0, 0.5)");
+            setTextshadow("none");
+            setNavbarColor(
+                "linear-gradient(to right,whitesmoke,rgba(255,255,255,1))"
+            );
+            return setNavlinkcolor("#33312f");
+        } else {
+            setBoxShadow("none");
+            setTextshadow(`2px 2px 5px rgba(0, 0, 0, 0.7),
+                        -2px -2px 4px rgba(0, 0, 0, 0.7)`);
+            setNavbarColor("rgba(0, 0, 0, 0)");
+            return setNavlinkcolor("white");
+        }
+    };
+
+    useEffect(() => {
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    });
+
     return (
         <div>
-            <nav className="navbar fixed-top navbar-expand navbar-dark">
+            <nav className="navbar fixed-top navbar-expand navbar-dark ">
                 <div className="">
                     <button
                         className="navbar-toggler"
@@ -51,7 +85,7 @@ function Header() {
                                     }
                                     onClick={dropdownClick}
                                 >
-                                    Services
+                                    <div className="dropName">Services</div>
                                     <div className="dropdown-content">
                                         <Dropdown />
                                     </div>
@@ -66,6 +100,22 @@ function Header() {
                     </div>
                 </div>
             </nav>
+            <style jsx>{`
+                nav {
+                    box-shadow: ${boxShadow};
+                }
+                .navbar-dark {
+                    background-image: ${navbarColor};
+                }
+                .grow a {
+                    color: ${navLinkColor};
+                    text-shadow: ${textShadow};
+                }
+                .dropbtn .dropName {
+                    color: ${navLinkColor};
+                    text-shadow: ${textShadow};
+                }
+            `}</style>
         </div>
     );
 }
