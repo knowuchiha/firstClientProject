@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import { HomeData } from "../shared/HomeData";
-import ProjectData from "../shared/architectureProject";
+import { ProjectData, PeopleData } from "../shared/architectureProject";
 import ServiceCard from "./ServiceCard";
+// import ProjectCard from "./ProjectCard";
+import AccordionComponent from "./AccordionComponent";
 import TeamCard from "./TeamCard";
 import Zoom from "react-reveal/Zoom";
+// import Fade from "react-reveal/Fade";
 import ModalComponent from "./ModalComponent";
 
 const Data = HomeData.images[0];
 export default function ArchitectureComponent() {
-    const [modalData, setModalData] = useState("");
+    const [modalData, setModalData] = useState({ name: "Rahul Sharma", id: 0 });
 
-    function launchModal(id) {
-        setModalData(ProjectData[id].img);
+    function launchModal(id, project) {
+        console.log(`launch modal : ${project}`);
+        setModalData({ name: project, id: id });
+
         const btn = document.getElementById("modal-btn");
         return btn.click();
     }
@@ -38,9 +43,9 @@ export default function ArchitectureComponent() {
                     <div className="row">
                         <div className="serve-cards">
                             <ServiceCard title="Architecture" />
-                            <ServiceCard title="Design" />
-                            <ServiceCard title="Consulting" />
-                            <ServiceCard title="Innovation" />
+                            <ServiceCard title="Virtual reality" />
+                            <ServiceCard title="Structure design" />
+                            <ServiceCard title="consulting" />
                         </div>
                     </div>
 
@@ -50,40 +55,35 @@ export default function ArchitectureComponent() {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="project-cards">
-                            {ProjectData.map((data, index) => {
-                                return (
-                                    <ServiceCard
-                                        name={data.projectName}
-                                        img={data.img}
-                                        modalbtn={launchModal}
-                                        id={index}
-                                    />
-                                );
-                            })}
-                            <ModalComponent img={modalData} />
-                        </div>
+                        {Object.keys(ProjectData).map((key, index) => {
+                            const name = key.split(" ")[0];
+                            return (
+                                <AccordionComponent
+                                    key={index}
+                                    id={name}
+                                    title={key}
+                                    btn={launchModal}
+                                />
+                            );
+                        })}
                     </div>
+                    <ModalComponent data={modalData.name} id={modalData.id} />
                     <div className="row">
                         <div className="core-team">Our Core team</div>
                     </div>
                     <div className="row">
                         <div className="core-team-cards">
-                            <TeamCard
-                                name="James Potter"
-                                title="Designation"
-                                id="james"
-                            />
-                            <TeamCard
-                                name="Laura Doe"
-                                title="Designation"
-                                id="laura"
-                            />
-                            <TeamCard
-                                name="Carl John"
-                                title="Designation"
-                                id="carl"
-                            />
+                            {PeopleData.map((person, index) => {
+                                return (
+                                    <TeamCard
+                                        name={person.name}
+                                        title=""
+                                        desc={person.description}
+                                        facebook={person.facebook}
+                                        id={index}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                     <div className="row">
@@ -92,7 +92,7 @@ export default function ArchitectureComponent() {
                             type="button"
                             class="btn btn-primary"
                             data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
+                            data-bs-target="#ProjectModal"
                         >
                             Launch demo modal
                         </button>

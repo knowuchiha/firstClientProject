@@ -59,7 +59,7 @@ function Header() {
                                     }
                                     onClick={dropdownClick}
                                 >
-                                    Services
+                                    <div className="dropName">Services</div>
                                     <div className="dropdown-content">
                                         <Dropdown />
                                     </div>

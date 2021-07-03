@@ -93,7 +93,7 @@
         text-align: left;
     }
 
-    .dropbtn div {
+    .dropbtn .dropName {
         text-decoration: none;
         color: var(--nav-link-color);
         font-size: 15px;
@@ -105,7 +105,8 @@
         display: inline-block;
     }
     .dropdown-content {
-        padding-top: 5vh;
+        font-size: 0.9em;
+        padding-top: 3vh;
         display: none;
         position: absolute;
         left: -50%;
@@ -618,7 +619,7 @@
     }
     .front .bottom {
         color: black;
-        margin-top: 8%;
+        margin-top: 15%;
         cursor: pointer;
         animation: scaling;
         animation-duration: 0.8s;
@@ -660,7 +661,7 @@
         margin-bottom: 20px;
     }
     .back .goback {
-        margin-top: 20%;
+        margin-top: 10%;
         cursor: pointer;
         color: black;
         animation: scaling;
@@ -674,7 +675,7 @@
         margin-left: 10%;
         width: 80%;
         color: black;
-        margin-top: 10%;
+        margin-top: 8%;
         font-size: 1.5em;
         font-weight: 600;
         text-align: center;
@@ -682,15 +683,16 @@
         border-bottom: 1px solid rgba(59, 59, 59, 0.3);
     }
     .back-text {
+        font-size: 0.9em;
         width: 80%;
         color: black;
         margin-top: 5%;
         margin-left: 10%;
-        height: 20%;
+        height: 50%;
         border-bottom: 1px solid rgba(59, 59, 59, 0.3);
     }
     .links {
-        margin-top: 15%;
+        margin-top: 8%;
         width: 50%;
         margin-left: 25%;
         display: flex;
@@ -755,6 +757,7 @@
     }
 
     .project .project-title {
+        text-transform: capitalize;
         text-align: center;
         margin-top: 10%;
         height: 20%;
@@ -767,6 +770,7 @@
         width: 100%;
         height: 100%;
     }
+
     /*
     *
     *
@@ -850,6 +854,7 @@
     .navbar {
         width: 100vw;
         margin-top: 0px;
+        box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.3);
     }
     .navbar-dark {
         background-color: var(--navbar-color);
@@ -876,11 +881,13 @@
         font-weight: 400;
         text-align: left;
     }
-    .grow:hover {
-        transform: scale(1.2);
+    .grow {
         transition-duration: 0.6s;
     }
-    .dropbtn div {
+    .grow:hover {
+        transform: scale(1.15);
+    }
+    .dropbtn .dropName {
         cursor: pointer;
         text-decoration: none;
         color: var(--nav-link-color);
@@ -893,6 +900,7 @@
         display: inline-block;
     }
     .dropdown-content {
+        font-size: 1.3em;
         padding-top: 5vh;
         display: none;
         position: absolute;
@@ -914,11 +922,11 @@
         margin-left: 5%;
         padding-top: 10px;
         padding-bottom: 10px;
+        transition-duration: 0.5s;
     }
     .dropdown-content a:hover {
         color: var(--nav-selected);
         transform: scale(1.1);
-        transition-duration: 0.5s;
     }
 
     .dropdown:hover .dropdown-content {
@@ -1024,6 +1032,8 @@
         margin-left: 10%;
         width: 80%;
         height: 100%;
+
+        transition: 0.25s ease-in-out;
     }
     .img-thumbnail img {
         border-radius: 1%;
@@ -1035,12 +1045,10 @@
         color: var(--nav-selected);
     }
     .model .img-thumbnail:hover {
-        transform: scale(1.05);
-        transition-duration: 0.5s;
+        transform: scale(1.06);
     }
     .model .img-thumbnail:hover .model-details {
         opacity: 1;
-        transition-duration: 0.5s;
     }
     .model-title {
         margin-top: 5%;
@@ -1056,6 +1064,7 @@
         background-color: #00000063;
         top: 0;
         opacity: 0;
+        transition-duration: 0.5s;
     }
     .model .model-details h5 {
         margin-top: 50%;
@@ -1301,6 +1310,7 @@
         font-weight: 600;
         text-align: center;
         text-transform: capitalize;
+        color: rgb(59, 59, 59);
     }
     .serve-cards {
         width: 100%;
@@ -1313,19 +1323,28 @@
     }
 
     .serve-cards .card {
+        border: none;
         margin-left: 1vw;
         margin-right: 1vw;
         margin-top: 1vw;
         margin-bottom: 1vw;
         width: 20%;
+        /* background-image: linear-gradient(
+            to right,
+            rgb(255, 202, 58),
+            rgb(255, 250, 182)
+        ); */
     }
 
     .serve-cards .card .card-subtitle {
+        color: rgb(27, 14, 14);
+        font-weight: 700;
         text-transform: capitalize;
         padding-bottom: 20px;
         border-bottom: 2px solid rgb(20, 16, 16);
     }
     .serve-cards .card .card-text {
+        color: black;
         margin-top: 15%;
     }
 
@@ -1350,10 +1369,11 @@
     .core-team-cards {
         display: flex;
         flex: content;
+        flex-wrap: wrap;
         justify-content: space-around;
     }
     .core-team-cards .flipper {
-        width: 22vw;
+        width: 20vw;
         height: 60vh;
         padding-left: 0px;
         padding-right: 0px;
@@ -1408,13 +1428,14 @@
     }
     .front .bottom {
         color: black;
-        margin-top: 8%;
+        margin-top: 15%;
         cursor: pointer;
+        transition-duration: 0.5s;
     }
     .front .avatar {
         background-color: white;
         padding: 0;
-        width: 50%;
+        width: 170px;
         height: 40%;
         border: 10px solid white;
         border-radius: 50%;
@@ -1442,14 +1463,14 @@
         margin-bottom: 20px;
     }
     .back .goback {
-        margin-top: 20%;
+        margin-top: 10%;
         cursor: pointer;
         color: black;
+        transition-duration: 0.5s;
     }
     .front .bottom:hover,
     .back .goback:hover {
         transform: scale(1.1);
-        transition-duration: 0.5s;
     }
     .back .goback:hover .fa-undo {
         transform: rotateZ(-360deg);
@@ -1466,23 +1487,24 @@
         margin-left: 10%;
         width: 80%;
         color: black;
-        margin-top: 10%;
+        margin-top: 5%;
         font-size: 1.5em;
         font-weight: 600;
         text-align: center;
-        padding-bottom: 5%;
+        padding-bottom: 3%;
         border-bottom: 1px solid rgba(59, 59, 59, 0.3);
     }
     .back-text {
         width: 80%;
+        font-size: 0.9em;
         color: black;
         margin-top: 5%;
         margin-left: 10%;
-        height: 20%;
+        height: 50%;
         border-bottom: 1px solid rgba(59, 59, 59, 0.3);
     }
     .links {
-        margin-top: 15%;
+        margin-top: 10%;
         width: 50%;
         margin-left: 25%;
         display: flex;
@@ -1491,7 +1513,6 @@
     }
     .links .fa {
         width: 1.5em;
-
         font-size: 1.8em;
     }
     .links .fa:hover {
@@ -1520,44 +1541,98 @@
     */
     .project-cards {
         width: 100%;
-        margin-top: 5vh;
+        margin-top: 2vh;
+        margin-left: 5%;
         display: flex;
         flex: content;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: left;
     }
 
     .project-cards .card {
-        margin-left: 1vw;
-        margin-right: 1vw;
+        margin-left: 1%;
+        margin-right: 1%;
         margin-top: 1vw;
         margin-bottom: 1vw;
-        width: 20%;
+        width: calc(100% / 4);
+        transform: perspective(800px) rotateY(20deg);
+        transition: 0.5s;
+        background-color: transparent;
+        border: none;
     }
     .project {
         cursor: pointer;
         width: 100%;
-        height: 300px;
+        height: 200px;
         background-color: white;
+        transform-origin: center;
+        transform: perspective(900px) rotateY(20deg);
+        transition: 0.5s;
     }
 
     .project:hover {
-        transform: scale(1.05);
-        transition-duration: 0.5s;
+        transform: perspective(900px) rotateY(0deg);
     }
-    .project .project-title {
+    .project .project-title-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: radial-gradient(
+            rgba(255, 243, 221, 0.3),
+            rgb(255, 220, 156, 0.6)
+        );
+        height: 100%;
+        width: 100%;
+    }
+    .project .project-title-overlay .project-title {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        height: 70%;
+        color: rgb(0, 0, 0);
+        /* text-shadow: 0px 0px 2px rgb(0, 0, 0); */
+        text-transform: capitalize;
         text-align: center;
-        margin-top: 10%;
-        height: 20%;
+        font-size: 1.2em;
+        font-weight: 400;
+        word-spacing: 5px;
+        padding-top: 20px;
+        border-radius: 10px;
+        background-color: rgb(255, 253, 251);
+        margin: auto auto;
     }
     .project .project-img {
+        position: relative;
         width: 100%;
-        height: 70%;
+        height: 100%;
     }
     .project .project-img img {
         width: 100%;
         height: 100%;
+    }
+
+    .clientName {
+        margin-left: 5%;
+        margin-top: 8vh;
+        background-image: linear-gradient(
+            to right,
+            rgb(255, 253, 225),
+            rgb(255, 253, 225),
+            rgb(252, 210, 97)
+        );
+        max-width: 90%;
+        height: 60px;
+        font-size: 2em;
+        text-transform: capitalize;
+        padding-left: 4%;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        padding-top: 5px;
+    }
+    .skewX {
+        transform: skewX(-15deg);
     }
 
     /*
@@ -1574,42 +1649,156 @@
     .modal {
         width: 100vw;
         height: 100vh;
+        overflow: hidden;
     }
     .modal-dialog {
+        margin-top: 0;
         margin-left: 0;
         min-width: 100vw;
-        min-height: 90vh;
+        min-height: 100vh;
         max-height: 100vh;
     }
     .modal-content {
-        margin-left: 5vw;
+        padding: 0;
+        margin: 0 auto;
         width: 90vw;
-        height: 90vh;
-        background-color: rgb(0, 0, 0, 0.2);
+        height: 98vh;
+        background-color: rgba(255, 255, 255, 1);
         border: none;
     }
     .modal-header {
+        height: 8%;
         color: white;
         border: none;
-        margin-bottom: 0;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        margin-bottom: 5px;
+        /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.623); */
+    }
+    .modal-title {
+        width: 100%;
+        text-transform: capitalize;
+        padding-left: 5%;
+        color: black;
+        font-size: 2em;
+        font-weight: 700;
     }
     .modal-header button {
         color: white;
         background-color: white;
     }
     .modal-body {
-        width: 100%;
-        height: 100%;
-        margin-top: 0;
-        padding-top: 0;
+        margin-left: 1%;
+        width: 98%;
+        max-height: 90%;
+        padding: 0;
     }
-    .modal-img {
-        width: 100%;
-        height: 92%;
+
+    .modal-body .carousel {
+        z-index: 10;
+        max-height: 100%;
+    }
+    .modal-body .carousel-indicators button {
+        height: 14px;
+        width: 15px;
+        border-radius: 50%;
+        border: 1px solid;
+        background-color: black;
+        z-index: 100;
+    }
+    .modal-body .carousel-control-next,
+    .modal-body .carousel-control-prev {
+        z-index: 100;
+        filter: invert(1);
+        width: 10%;
+    }
+    .modal-body .carousel-control-next:hover .carousel-control-next-icon,
+    .modal-body .carousel-control-prev:hover .carousel-control-prev-icon {
+        transform: scale(1.5);
+        transition-duration: 0.2s;
+    }
+    .modal-body .carousel-inner {
+        margin: 0 auto;
+        position: relative;
+
+        height: 100%;
+    }
+    .modal-body .carousel-inner .carousel-item {
+        position: relative;
         overflow-y: scroll;
     }
-    .modal-img img {
+    .project-img-title {
+        margin: 0 auto;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1.3em;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        width: 80%;
+    }
+
+    /*
+    *
+    *
+        Accordion
+    *
+    *
+    */
+
+    .accordion {
+        border: none;
+        padding: 0;
+        margin: 4vh auto;
+        width: 70vw;
+    }
+
+    .accordion-header {
+        border: none;
+        padding: 0;
+        background-image: linear-gradient(
+            to right,
+            rgb(255, 255, 79),
+            rgb(255, 204, 63)
+        );
+        margin: 0;
         width: 100%;
+        height: 100%;
+    }
+    .accordion-button {
+        text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.781);
+        padding-left: 5%;
+        text-transform: capitalize;
+        color: rgb(61, 48, 48);
+        font-size: 1.5em;
+        font-weight: 900;
+        margin: 0;
+        border: none;
+        width: calc(100% + 1px);
+        min-height: 90px;
+        background-image: linear-gradient(
+            to right,
+            rgb(255, 183, 27),
+            rgb(255, 204, 110)
+        );
+    }
+    .accordion-button:focus {
+        border: none;
+        box-shadow: none;
+    }
+    .accordion-button:not(.collapsed) {
+        color: rgb(41, 32, 32);
+        background-color: black;
+        box-shadow: inset;
+    }
+    .accordion-body {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 5%;
+        min-height: 200px;
+    }
+    .project-client-title {
+        margin-top: 2%;
+        margin-left: 5%;
     }
 }
 
@@ -1632,6 +1821,13 @@ ALL VIEWPORTS
 body {
     margin: 0;
     font-family: "Raleway", sans-serif;
+    /* background-image: linear-gradient(
+        to right,
+        rgb(236, 243, 169),
+        rgb(252, 234, 207),
+        rgb(253, 240, 200)
+    ); */
+    background-color: #ffe9d4d8;
 }
 #modal-btn {
     display: none;

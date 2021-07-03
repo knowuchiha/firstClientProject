@@ -57,10 +57,12 @@ export default function TeamCard(props) {
                 </div>
                 <div class="back">
                     <div className="back-title">About me</div>
-                    <div className="back-text">Brief about the person</div>
+                    <div className="back-text">
+                        {props.desc ? props.desc : "Brief about person"}
+                    </div>
                     <div className="links">
                         <a
-                            href="http://www.facebook.com"
+                            href={props.facebook ? props.facebook : "#"}
                             target="_blank"
                             rel="noreferrer"
                         >

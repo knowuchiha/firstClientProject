@@ -3,19 +3,21 @@ import Fade from "react-reveal/Fade";
 
 export default function ServiceCard(props) {
     const Project = props.img ? true : false;
-    const ProjectClass = props.img ? "project-class" : null;
+
     return (
         <>
-            <Fade left delay={200} duration={1500}>
+            <Fade left delay={0} duration={1200}>
                 <div
-                    className={"card border-light shadow " + ProjectClass}
+                    className={"card border-light shadow "}
                     onClick={
-                        props.modalbtn ? () => props.modalbtn(props.id) : null
+                        props.modalbtn
+                            ? () => props.modalbtn(props.id, props.project)
+                            : null
                     }
                 >
                     {Project ? null : (
                         <div className="card-body">
-                            <h5 className="card-subtitle mb-2 text-muted">
+                            <h5 className="card-subtitle mb-2 ">
                                 {props.title}
                             </h5>
 
