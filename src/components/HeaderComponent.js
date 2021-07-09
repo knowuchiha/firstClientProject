@@ -10,7 +10,14 @@ function Header() {
     };
 
     function Dropdown() {
-        return HomeData.images.map((item) => {
+        return HomeData.images.map((item, index) => {
+            if (index === 2 || index === 4) {
+                return (
+                    <div key={index} className="disabled-title">
+                        {item.title}
+                    </div>
+                );
+            }
             return (
                 <Link key={item.title} to={`${item.link}`} target="_blank">
                     {item.title}
@@ -66,7 +73,7 @@ function Header() {
                                 </div>
                             </li>
                             <li className="nav-item grow">
-                                <a href="#corporateLeaders">About</a>
+                                <a href="/home#corporateLeaders">About</a>
                             </li>
                         </ul>
                     </div>

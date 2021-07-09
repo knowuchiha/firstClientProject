@@ -1,10 +1,9 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
 
 export default function ProjectCard(props) {
     const name = props.name ? props.name : "Photo";
     return (
-        <Fade left duration={1200} delay={100}>
+        <>
             <div
                 className="card border-light"
                 onClick={() => props.modalbtn(props.id, props.project)}
@@ -21,6 +20,6 @@ export default function ProjectCard(props) {
                     </div>
                 </div>
             </div>
-        </Fade>
+        </>
     );
 }

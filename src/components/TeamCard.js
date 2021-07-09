@@ -41,7 +41,7 @@ export default function TeamCard(props) {
                     </div>
                     <div className="front-text">
                         <h4>{props.name}</h4>
-                        <h6>{props.title}</h6>
+                        <div className="designation">{props.designation}</div>
                     </div>
                     <div className=" bottom flipCard">
                         read more{" "}
@@ -61,18 +61,34 @@ export default function TeamCard(props) {
                         {props.desc ? props.desc : "Brief about person"}
                     </div>
                     <div className="links">
-                        <a
-                            href={props.facebook ? props.facebook : "#"}
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            {" "}
-                            <i
-                                class="fa fa-facebook"
-                                aria-hidden="true"
-                            ></i>{" "}
-                        </a>
-                        <a
+                        {props.facebook ? (
+                            <a
+                                href={props.facebook}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {" "}
+                                <i
+                                    class="fa fa-facebook"
+                                    aria-hidden="true"
+                                ></i>{" "}
+                            </a>
+                        ) : null}
+                        {props.linkedin ? (
+                            <a
+                                href={props.linkedin}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {" "}
+                                <i
+                                    class="fa fa-linkedin"
+                                    aria-hidden="true"
+                                ></i>{" "}
+                            </a>
+                        ) : null}
+
+                        {/* <a
                             href="http://www.twitter.com"
                             target="_blank"
                             rel="noreferrer"
@@ -82,18 +98,7 @@ export default function TeamCard(props) {
                                 class="fa fa-twitter"
                                 aria-hidden="true"
                             ></i>{" "}
-                        </a>
-                        <a
-                            href="http://www.linkedin.com"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            {" "}
-                            <i
-                                class="fa fa-linkedin"
-                                aria-hidden="true"
-                            ></i>{" "}
-                        </a>
+                        </a> */}
                     </div>
                     <div class="goback">
                         <div className="flipCard">

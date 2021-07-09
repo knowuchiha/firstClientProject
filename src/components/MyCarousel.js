@@ -4,7 +4,7 @@ import { HomeData } from "../shared/HomeData";
 
 const items = HomeData.images;
 
-const MyCarousel = (props) => {
+const MyCarousel = () => {
     useEffect(() => {
         const next = document.getElementById("next-btn");
         setInterval(function () {

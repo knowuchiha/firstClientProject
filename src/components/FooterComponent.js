@@ -1,12 +1,26 @@
 import React from "react";
 import { HomeData } from "../shared/HomeData";
 import { Link } from "react-router-dom";
+import SocialMedia from "../shared/SocialMedia";
 
 function Footer() {
     const Services = () => {
         return (
             <ul>
-                {HomeData.images.map((item) => {
+                {HomeData.images.map((item, index) => {
+                    if (index === 2 || index === 4) {
+                        return (
+                            <li key={item.title}>
+                                <div
+                                    className="disabled"
+                                    to={`${item.link}`}
+                                    target="_blank"
+                                >
+                                    {item.title}
+                                </div>
+                            </li>
+                        );
+                    }
                     return (
                         <li key={item.title}>
                             <Link to={`${item.link}`} target="_blank">
@@ -33,26 +47,20 @@ function Footer() {
                             </div>
                             <div className="social-fonts">
                                 <a
-                                    href="https://www.instagram.com/"
+                                    href={SocialMedia.instagram}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <i className="fa fa-instagram"></i>
                                 </a>
                                 <a
-                                    href="https://www.facebook.com/"
+                                    href={SocialMedia.facebook}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <i className="fa fa-facebook"></i>
                                 </a>
-                                <a
-                                    href="https://www.linkedin.com/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <i className="fa fa-linkedin"></i>
-                                </a>
+
                                 <a
                                     href="mailto:kssengineering@gmail.com"
                                     target="_blank"

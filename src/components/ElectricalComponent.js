@@ -1,11 +1,22 @@
 import React from "react";
 import { HomeData } from "../shared/HomeData";
-import ServiceCard from "./ServiceCard";
-import TeamCard from "./TeamCard";
+import ProjectData from "../shared/ElectricalProjects";
 import Zoom from "react-reveal/Zoom";
+import AccordionComponent from "./AccordionComponent";
+import ModalComponent from "./ModalComponent";
 
 const Data = HomeData.images[3];
 export default function ElectricalComponent() {
+    const [modalData, setModalData] = React.useState({
+        name: "APDCL",
+        id: 0,
+    });
+
+    function launchModal(id, project) {
+        setModalData({ name: project, id: id });
+        const btn = document.getElementById("modal-btn");
+        return btn.click();
+    }
     return (
         <>
             <div className="service-component">
@@ -23,37 +34,42 @@ export default function ElectricalComponent() {
                 </div>
                 <div className="container">
                     <div className="row">
-                        <div className="service-header">What we serve</div>
-                    </div>
-                    <div className="row">
-                        <div className="serve-cards">
-                            <ServiceCard title="Architecture" />
-                            <ServiceCard title="Design" />
-                            <ServiceCard title="Consulting" />
-                            <ServiceCard title="Innovation" />
+                        <div className="service-header">
+                            Projects Done By Us
                         </div>
                     </div>
+                </div>
+                <div className="project-accordions">
+                    {Object.keys(ProjectData).map((key, index) => {
+                        const name = key.split(" ")[0];
+                        return (
+                            <AccordionComponent
+                                key={index}
+                                id={name}
+                                title={key}
+                                btn={launchModal}
+                                ProjectData={ProjectData}
+                            />
+                        );
+                    })}
+                </div>
+                <div className="container">
+                    <ModalComponent
+                        data={modalData.name}
+                        id={modalData.id}
+                        ProjectData={ProjectData}
+                    />
+
                     <div className="row">
-                        <div className="core-team">Our Core team</div>
-                    </div>
-                    <div className="row">
-                        <div className="core-team-cards">
-                            <TeamCard
-                                name="James Potter"
-                                title="Designation"
-                                id="james"
-                            />
-                            <TeamCard
-                                name="Laura Doe"
-                                title="Designation"
-                                id="laura"
-                            />
-                            <TeamCard
-                                name="Carl John"
-                                title="Designation"
-                                id="carl"
-                            />
-                        </div>
+                        <button
+                            id="modal-btn"
+                            type="button"
+                            className="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#ProjectModal"
+                        >
+                            Launch demo modal
+                        </button>
                     </div>
                 </div>
             </div>

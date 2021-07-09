@@ -9,17 +9,34 @@ import { Link } from "react-router-dom";
 function Home() {
     const Models = () => {
         return HomeData.images.map((item, index) => {
+            if (index === 2 || index === 4) {
+                return (
+                    <Fade left duration={1000 + (index % 3) * 150}>
+                        <div key={item.title} className="model">
+                            <div className="img-thumbnail shadow-lg">
+                                <div
+                                    className="disabled"
+                                    to={`${item.link}`}
+                                    target="_blank"
+                                >
+                                    <img src={item.img} alt={item.title} />
+                                    <div className="model-title">
+                                        {item.title}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Fade>
+                );
+            }
             return (
                 <Fade left duration={1000 + (index % 3) * 150}>
                     <div key={item.title} className="model">
-                        <div className="img-thumbnail shadow-lg">
+                        <div className="img-thumbnail shadow-lg model-scale">
                             <Link to={`${item.link}`} target="_blank">
                                 <img src={item.img} alt={item.title} />
                                 <div className="model-title">{item.title}</div>
                             </Link>
-                            {/* <Link to={`/${item.title}`} className="model-details">
-                            <h5>click for more ...</h5>
-                        </Link> */}
                         </div>
                     </div>
                 </Fade>
