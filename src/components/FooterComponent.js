@@ -62,7 +62,7 @@ function Footer() {
                                 </a>
 
                                 <a
-                                    href="mailto:kssengineering@gmail.com"
+                                    href={`mailto:${SocialMedia.email}`}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -75,7 +75,7 @@ function Footer() {
                                         <a
                                             target="_blank"
                                             rel="noreferrer"
-                                            href="mailto:kssengineering@gmail.com"
+                                            href={`mailto:${SocialMedia.email}`}
                                         >
                                             Contact Us
                                         </a>

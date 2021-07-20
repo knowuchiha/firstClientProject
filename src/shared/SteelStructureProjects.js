@@ -1,4 +1,17 @@
 const Projects = {
+    IOCL: {
+        project: "APDCL",
+        data: [
+            {
+                projectName: "Drawing for IOCL Shed (Designed by EIL)",
+                img: "/assets/images/Steel Structure/iocl/B009-006-83-41-05122-01pdf_page-0001.jpg",
+            },
+            {
+                projectName: "Drawing for IOCL Shed (Designed by EIL)",
+                img: "/assets/images/Steel Structure/iocl/B009-006-83-41-05124-01l_page-0001.jpg",
+            },
+        ],
+    },
     APDCL: {
         project: "APDCL",
         data: [

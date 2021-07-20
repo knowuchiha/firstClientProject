@@ -28,8 +28,20 @@ const Project = {
                 img: "/assets/images/Architecture _ 3D/resort/resort structure 2.jpg",
             },
             {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index.jpg",
+                projectName: "double decker restaurant",
+                img: "/assets/images/Architecture _ 3D/resort/Rendering/doubledeck_1.jpg",
+            },
+            {
+                projectName: "double decker restaurant",
+                img: "/assets/images/Architecture _ 3D/resort/Rendering/doubledeck_2.jpg",
+            },
+            {
+                projectName: "double decker restaurant",
+                img: "/assets/images/Architecture _ 3D/resort/Rendering/doubledeck_3.jpg",
+            },
+            {
+                projectName: "double decker restaurant",
+                img: "/assets/images/Architecture _ 3D/resort/Rendering/doubledeck_4.jpg",
             },
             {
                 projectName: "",
@@ -45,15 +57,7 @@ const Project = {
             },
             {
                 projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_3.jpg",
-            },
-            {
-                projectName: "",
                 img: "/assets/images/Architecture _ 3D/resort/Rendering/index_4.jpg",
-            },
-            {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_5.jpg",
             },
             {
                 projectName: "",
@@ -77,27 +81,7 @@ const Project = {
             },
             {
                 projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_11.jpg",
-            },
-            {
-                projectName: "",
                 img: "/assets/images/Architecture _ 3D/resort/Rendering/index_12.jpg",
-            },
-            {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_13.jpg",
-            },
-            {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_14.jpg",
-            },
-            {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_15.jpg",
-            },
-            {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/resort/Rendering/index_16.jpg",
             },
         ],
     },
@@ -116,19 +100,16 @@ const Project = {
                 projectName: "",
                 img: "/assets/images/Architecture _ 3D/Biju Borah/render 3.jpeg",
             },
-            {
-                projectName: "",
-                img: "/assets/images/Architecture _ 3D/Biju Borah/render 4.jpg",
-            },
         ],
     },
     "Rahul Sharma": {
         project: "House",
         data: [
             {
-                projectName: "ground floor beam layout and section",
-                img: "/assets/images/Architecture _ 3D/Rahul Sharma/RAHUL SHARMA PLINTH BEAM.jpg",
+                projectName: "first floor architecture floor plan",
+                img: "/assets/images/Architecture _ 3D/Rahul Sharma/RAHUL SHARMA ARCH FIRST FLOOR R2.jpg",
             },
+
             {
                 projectName: "Ground floor architecture floor plan",
                 img: "/assets/images/Architecture _ 3D/Rahul Sharma/RAHUL SHARMA ARCH R4.jpg",
@@ -142,8 +123,8 @@ const Project = {
                 img: "/assets/images/Architecture _ 3D/Rahul Sharma/RAHUL SHARMA FOOTING.jpg",
             },
             {
-                projectName: "first floor architecture floor plan",
-                img: "/assets/images/Architecture _ 3D/Rahul Sharma/RAHUL SHARMA ARCH FIRST FLOOR R2.jpg",
+                projectName: "ground floor beam layout and section",
+                img: "/assets/images/Architecture _ 3D/Rahul Sharma/RAHUL SHARMA PLINTH BEAM.jpg",
             },
         ],
     },

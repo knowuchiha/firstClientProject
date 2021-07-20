@@ -4,14 +4,10 @@ const Projects = {
         data: [
             {
                 projectName:
-                    "Sketch plan showing proposed 33Kv underground railway track crossing of 33Kv",
-                img: "/assets/images/Electrical/1.jpg",
-            },
-            {
-                projectName:
                     "electrical layout plan & section of 33kv terminal bay",
                 img: "/assets/images/Electrical/2.jpg",
             },
+
             {
                 projectName: "foundation, cable trench, PCC layout",
                 img: "/assets/images/Electrical/3.jpg",
@@ -53,6 +49,11 @@ const Projects = {
             {
                 projectName: "erection key diagram",
                 img: "/assets/images/Electrical/12.jpg",
+            },
+            {
+                projectName:
+                    "Sketch plan showing proposed 33Kv underground railway track crossing of 33Kv",
+                img: "/assets/images/Electrical/1.jpg",
             },
         ],
     },
