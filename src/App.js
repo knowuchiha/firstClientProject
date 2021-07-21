@@ -14,6 +14,7 @@ import PipingComponent from "./components/PipingComponent";
 import ElectricalComponent from "./components/ElectricalComponent";
 import TenderingComponent from "./components/TenderingComponent";
 import TopographicalComponent from "./components/TopographicalComponent";
+
 // CSS
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
@@ -60,6 +61,7 @@ function App() {
                     path={`${HomeData.images[5].link}`}
                     component={TopographicalComponent}
                 />
+
                 <Redirect to="/home"></Redirect>
             </Switch>
             <Footer />

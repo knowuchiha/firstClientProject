@@ -4,6 +4,20 @@ import { Link } from "react-router-dom";
 import SocialMedia from "../shared/SocialMedia";
 
 function Footer() {
+    const handleEmail = () => {
+        const url = `https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=${SocialMedia.email}`;
+        const mobileUrl = `mailto:${SocialMedia.email}`;
+        if (
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+            )
+        ) {
+            window.open(mobileUrl, "_blank");
+        } else {
+            window.open(url, "_blank");
+        }
+    };
+
     const Services = () => {
         return (
             <ul>
@@ -61,24 +75,16 @@ function Footer() {
                                     <i className="fa fa-facebook"></i>
                                 </a>
 
-                                <a
-                                    href={`mailto:${SocialMedia.email}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
+                                <Link onClick={handleEmail}>
                                     <i className="fa fa-envelope"></i>
-                                </a>
+                                </Link>
                             </div>
                             <div className="footer-services">
                                 <ul>
                                     <li>
-                                        <a
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            href={`mailto:${SocialMedia.email}`}
-                                        >
+                                        <Link onClick={handleEmail}>
                                             Contact Us
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
                                         <Link to="/">Privacy Notice</Link>

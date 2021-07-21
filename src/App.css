@@ -408,9 +408,7 @@
         text-decoration: none;
         color: var(--footer-link-color);
     }
-    .footer-services ul li a:hover {
-        color: white;
-    }
+
     .service-footer {
         padding-left: 5%;
         font-size: 1em;
@@ -469,10 +467,6 @@
         border-radius: 50%;
     }
 
-    .social-fonts a i:hover {
-        transform: scale(1.6);
-        transition-duration: 0.5s;
-    }
     /*
     *
     *
